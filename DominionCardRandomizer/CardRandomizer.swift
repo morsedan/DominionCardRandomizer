@@ -37,6 +37,8 @@ var gainZeroCard = [Card]()
 var gainMoreCard = [Card]()
 
 
+/// Returns a random number within the bounds of the index
+/// for the array that is passed in.
 func randomIndex(for group: [Any]) -> Int {
     return Int.random(in: 0..<group.count)
 }
@@ -99,4 +101,14 @@ func createRandomDeck(from deck: [Card], with amount: Int) -> [String] {
         playCards.append(nextCard)
     }
     return playCards.sorted()
+}
+
+func determinePlayingCards() -> String {
+    let playingTwos = (createRandomDeck(from: costsTwoDeck, with: 1))
+    let playingThrees = (createRandomDeck(from: costsThreeDeck, with: 2))
+    let playingFours = (createRandomDeck(from: costsFourDeck, with: 4))
+    let playingFivePlus = (createRandomDeck(from: costsFivePlusDeck, with: 3))
+    let playingCards = (playingTwos + playingThrees + playingFours + playingFivePlus).sorted()
+    return "\(playingCards[0])\n\(playingCards[1])\n\(playingCards[2])\n\(playingCards[3])\n\(playingCards[4])\n\(playingCards[5])\n\(playingCards[6])\n\(playingCards[7])\n\(playingCards[8])\n\(playingCards[9])"
+
 }
