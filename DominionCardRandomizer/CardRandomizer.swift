@@ -6,7 +6,7 @@
 //  Copyright © 2019 morse. All rights reserved.
 //
 
-
+/// Set up empty decks for different categories.
 var attackDeck = [Card]()
 var defenseDeck = [Card]()
 var costsTwoDeck = [Card]()
@@ -90,7 +90,7 @@ func categorizeCards(in deck: [Card]) {
     }
 }
 
-
+/// Returns a given number of Cards from a deck as a string.
 func createRandomDeck(from deck: [Card], with amount: Int) -> [String] {
     var playCards = [String]()
     for _ in 1...amount {
@@ -103,6 +103,7 @@ func createRandomDeck(from deck: [Card], with amount: Int) -> [String] {
     return playCards.sorted()
 }
 
+/// Returns the cards that will be used as a string
 func determinePlayingCards() -> String {
     let playingTwos = (createRandomDeck(from: costsTwoDeck, with: 1))
     let playingThrees = (createRandomDeck(from: costsThreeDeck, with: 2))
@@ -110,5 +111,4 @@ func determinePlayingCards() -> String {
     let playingFivePlus = (createRandomDeck(from: costsFivePlusDeck, with: 3))
     let playingCards = (playingTwos + playingThrees + playingFours + playingFivePlus).sorted()
     return "\(playingCards[0])\n\(playingCards[1])\n\(playingCards[2])\n\(playingCards[3])\n\(playingCards[4])\n\(playingCards[5])\n\(playingCards[6])\n\(playingCards[7])\n\(playingCards[8])\n\(playingCards[9])"
-
 }
