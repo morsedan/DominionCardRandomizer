@@ -96,19 +96,47 @@ func createRandomDeck(from deck: [Card], with amount: Int) -> [String] {
     for _ in 1...amount {
         var nextCard: String
         repeat {
-            nextCard = deck[randomIndex(for: deck)].name
+            let randomNumber = randomIndex(for: deck)
+            nextCard = "\(deck[randomNumber].name): \(deck[randomNumber].cost)"
         } while playCards.contains(nextCard)
         playCards.append(nextCard)
     }
     return playCards.sorted()
 }
 
+func determineCardAmounts(twoRange: (Int, Int), threeRange: (Int, Int), fourRange: (Int, Int), fivePlusRange: (Int, Int)) -> [Int] {
+    var twoAmount: Int
+    var threeAmount: Int
+    var fourAmount: Int
+    var fivePlusAmount: Int
+    var twoThroughFour: Int
+    repeat {
+        twoAmount = Int.random(in: twoRange.0...twoRange.1)
+        threeAmount = Int.random(in: threeRange.0...threeRange.1)
+        fourAmount = Int.random(in: fourRange.0...fourRange.1)
+        twoThroughFour = twoAmount + threeAmount + fourAmount
+    } while 10 - twoThroughFour < fivePlusRange.0 || 10 - twoThroughFour > fivePlusRange.1
+    fivePlusAmount = 10 - twoThroughFour
+    return [twoAmount, threeAmount, fourAmount, fivePlusAmount]
+}
+
 /// Returns the cards that will be used as a string
 func determinePlayingCards() -> String {
-    let playingTwos = (createRandomDeck(from: costsTwoDeck, with: 1))
-    let playingThrees = (createRandomDeck(from: costsThreeDeck, with: 2))
-    let playingFours = (createRandomDeck(from: costsFourDeck, with: 4))
-    let playingFivePlus = (createRandomDeck(from: costsFivePlusDeck, with: 3))
+    let twoMin = 1
+    let twoMax = 2
+    let threeMin = 1
+    let threeMax = 3
+    let fourMin = 2
+    let fourMax = 5
+    let fivePlusMin = 1
+    let fivePlusMax = 4
+    let cardAmounts = determineCardAmounts(twoRange: (twoMin, twoMax), threeRange: (threeMin, threeMax), fourRange: (fourMin, fourMax), fivePlusRange: (fivePlusMin, fivePlusMax))
+    
+    let playingTwos = (createRandomDeck(from: costsTwoDeck, with: cardAmounts[0]))
+    let playingThrees = (createRandomDeck(from: costsThreeDeck, with: cardAmounts[1]))
+    let playingFours = (createRandomDeck(from: costsFourDeck, with: cardAmounts[2]))
+    let playingFivePlus = (createRandomDeck(from: costsFivePlusDeck, with: cardAmounts[3]))
     let playingCards = (playingTwos + playingThrees + playingFours + playingFivePlus).sorted()
+    
     return "\(playingCards[0])\n\(playingCards[1])\n\(playingCards[2])\n\(playingCards[3])\n\(playingCards[4])\n\(playingCards[5])\n\(playingCards[6])\n\(playingCards[7])\n\(playingCards[8])\n\(playingCards[9])"
 }
