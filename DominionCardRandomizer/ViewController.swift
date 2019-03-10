@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var displayCardLabel: UILabel!
     @IBOutlet weak var drawCardButton: UIButton!
+    @IBOutlet weak var attackSwitch: UISwitch!
     
     let colorProvider = BackgroundColorProvider()
     
@@ -27,5 +28,7 @@ class ViewController: UIViewController {
         drawCardButton.tintColor = randomColor
         
         displayCardLabel.text = determinePlayingCards()
+        
+        if attackSwitch.isOn { print("Attaaaack!")}
     }
 }
