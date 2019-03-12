@@ -6,7 +6,7 @@
 //  Copyright © 2019 morse. All rights reserved.
 //
 
-struct Card {
+struct Card: Hashable {
     let name: String
     let cost: Int
     let plusCard: Int
