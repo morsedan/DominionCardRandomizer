@@ -43,7 +43,8 @@ func randomIndex(for group: [Any]) -> Int {
     return Int.random(in: 0..<group.count)
 }
 
-
+/// Takes a deck and returns populated decks for the empty
+/// decks set up above.
 func categorizeCards(in deck: [Card]) {
     
     for card in deck {
@@ -104,6 +105,8 @@ func createRandomDeck(from deck: [Card], with amount: Int) -> [String] {
     return playCards.sorted()
 }
 
+/// Determines how many cards are needed from each cost
+/// category.
 func determineCardAmounts(twoRange: (Int, Int), threeRange: (Int, Int), fourRange: (Int, Int), fivePlusRange: (Int, Int)) -> [Int] {
     var twoAmount: Int
     var threeAmount: Int
@@ -120,7 +123,8 @@ func determineCardAmounts(twoRange: (Int, Int), threeRange: (Int, Int), fourRang
     return [twoAmount, threeAmount, fourAmount, fivePlusAmount]
 }
 
-/// Returns the cards that will be used as a string
+/// Returns a list of the cards that will be used in the
+/// form of a string.
 func determinePlayingCards() -> String {
     let twoMin = 1
     let twoMax = 2

@@ -6,6 +6,7 @@
 //  Copyright © 2019 morse. All rights reserved.
 //
 
+/// Lines 10 - 33 set up data for Dominion deck.
 let adventurer = Card(name: "Adventurer", cost: 6, plusCard: 2, plusAction: 0, plusBuy: 0, plusCoin: 0, trashCardUpTo: 0, gainCard: 0, isAttack: false, isDefense: false, fromDeck: "Dominion")
 let bureaucrat = Card(name: "Bureaucrat", cost: 4, plusCard: 0, plusAction: 0, plusBuy: 0, plusCoin: 0, trashCardUpTo: 0, gainCard: 1, isAttack: true, isDefense: false, fromDeck: "Dominion")
 let cellar = Card(name: "Cellar", cost: 2, plusCard: 0, plusAction: 1, plusBuy: 0, plusCoin: 0, trashCardUpTo: 0, gainCard: 0, isAttack: false, isDefense: false, fromDeck: "Dominion")
@@ -31,4 +32,5 @@ let witch = Card(name: "Witch", cost: 5, plusCard: 2, plusAction: 0, plusBuy: 0,
 let woodcutter = Card(name: "Woodcutter", cost: 3, plusCard: 0, plusAction: 0, plusBuy: 1, plusCoin: 2, trashCardUpTo: 0, gainCard: 0, isAttack: false, isDefense: false, fromDeck: "Dominion")
 let workshop = Card(name: "Workshop", cost: 3, plusCard: 0, plusAction: 0, plusBuy: 0, plusCoin: 0, trashCardUpTo: 0, gainCard: 1, isAttack: false, isDefense: false, fromDeck: "Dominion")
 
+/// Adds all cards to dominionDeck.
 let dominionDeck = [adventurer, bureaucrat, cellar, chancellor, chapel, councilRoom, feast, festival, laboratory, library, market, militia, mine, moat, moneylender, remodel, smithy, spy, thief, throneRoom, village, witch, woodcutter, workshop]

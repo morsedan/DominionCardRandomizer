@@ -6,6 +6,7 @@
 //  Copyright © 2019 morse. All rights reserved.
 //
 
+/// Creates the template for a Card.
 struct Card: Hashable {
     let name: String
     let cost: Int
