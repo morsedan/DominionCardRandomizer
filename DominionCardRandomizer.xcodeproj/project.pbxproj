@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C01565CE221E2DBB000D9238 /* CardTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01565CD221E2DBB000D9238 /* CardTemplate.swift */; };
 		C01565D0221E2DEA000D9238 /* dominionCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01565CF221E2DEA000D9238 /* dominionCardDeck.swift */; };
+		C0423931223F2A1C00E37E16 /* prosperityCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0423930223F2A1C00E37E16 /* prosperityCardDeck.swift */; };
 		C0EE9879221BA5C300999D7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EE9878221BA5C300999D7E /* AppDelegate.swift */; };
 		C0EE987B221BA5C300999D7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EE987A221BA5C300999D7E /* ViewController.swift */; };
 		C0EE987E221BA5C300999D7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0EE987C221BA5C300999D7E /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		C01565CD221E2DBB000D9238 /* CardTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTemplate.swift; sourceTree = "<group>"; };
 		C01565CF221E2DEA000D9238 /* dominionCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dominionCardDeck.swift; sourceTree = "<group>"; };
+		C0423930223F2A1C00E37E16 /* prosperityCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prosperityCardDeck.swift; sourceTree = "<group>"; };
 		C0EE9875221BA5C300999D7E /* DominionCardRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DominionCardRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EE9878221BA5C300999D7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EE987A221BA5C300999D7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				C01565CF221E2DEA000D9238 /* dominionCardDeck.swift */,
 				C01565CD221E2DBB000D9238 /* CardTemplate.swift */,
 				C0EE987C221BA5C300999D7E /* Main.storyboard */,
+				C0423930223F2A1C00E37E16 /* prosperityCardDeck.swift */,
 				C0EE987F221BA5C400999D7E /* Assets.xcassets */,
 				C0EE9881221BA5C400999D7E /* LaunchScreen.storyboard */,
 				C0EE9884221BA5C400999D7E /* Info.plist */,
@@ -153,6 +156,7 @@
 				C0EE988F221DDA8D00999D7E /* randomColorProvider.swift in Sources */,
 				C01565CE221E2DBB000D9238 /* CardTemplate.swift in Sources */,
 				C01565D0221E2DEA000D9238 /* dominionCardDeck.swift in Sources */,
+				C0423931223F2A1C00E37E16 /* prosperityCardDeck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
