@@ -9,10 +9,11 @@
 import UIKit
 
 class SettingsController: UIViewController {
-    @IBOutlet var settingsSwipedDown: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor(red: 90/255.0, green: 187/255.0, blue: 181/255.0, alpha: 1.0)
 
         // Do any additional setup after loading the view.
     }
