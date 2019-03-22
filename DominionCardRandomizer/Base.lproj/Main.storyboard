@@ -25,10 +25,22 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQF-Fh-xw4">
-                                <rect key="frame" x="24" y="519" width="335" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BmC-Eh-kzR">
+                                <rect key="frame" x="128" y="742" width="119" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Card Settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9zc-xt-2lc" kind="presentation" id="Asw-7L-nzH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQF-Fh-xw4">
+                                <rect key="frame" x="0.0" y="676" width="375" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3R1-1s-YlQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="tintColor" red="0.3529411764705882" green="0.73333333333333328" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Draw Cards"/>
@@ -36,17 +48,21 @@
                                     <action selector="showCards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fWa-eX-kb6"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ada-Bn-avD">
-                                <rect key="frame" x="163" y="566" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="onTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.3529411764705882" green="0.73333333333333328" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WQF-Fh-xw4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1y7-FE-gtW"/>
+                            <constraint firstItem="WQF-Fh-xw4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BOF-Ce-iTe"/>
+                            <constraint firstItem="BmC-Eh-kzR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FIm-KY-DS0"/>
+                            <constraint firstItem="BmC-Eh-kzR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JUw-r1-pRh"/>
+                            <constraint firstItem="BmC-Eh-kzR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JVr-IY-wHu"/>
+                            <constraint firstItem="BmC-Eh-kzR" firstAttribute="top" secondItem="WQF-Fh-xw4" secondAttribute="bottom" constant="24" id="LiP-WI-LYE"/>
+                            <constraint firstItem="BmC-Eh-kzR" firstAttribute="top" secondItem="WQF-Fh-xw4" secondAttribute="bottom" constant="6" id="fSm-g8-giC"/>
+                            <constraint firstItem="BmC-Eh-kzR" firstAttribute="top" secondItem="WQF-Fh-xw4" secondAttribute="bottom" constant="6" id="pq5-PH-xal"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="attackSwitch" destination="Ada-Bn-avD" id="0cw-Hm-meJ"/>
                         <outlet property="displayCardLabel" destination="yty-pW-Mxk" id="PaR-hs-idX"/>
                         <outlet property="drawCardButton" destination="WQF-Fh-xw4" id="AMI-LX-ph7"/>
                     </connections>
@@ -55,14 +71,35 @@
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="133.00492610837438"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings Controller-->
         <scene sceneID="DaF-mX-vgp">
             <objects>
-                <viewController id="9zc-xt-2lc" sceneMemberID="viewController">
+                <viewController id="9zc-xt-2lc" customClass="SettingsController" customModule="DominionCardRandomizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DRD-pl-hgb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdH-8L-rvI">
+                                <rect key="frame" x="0.0" y="718" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2IP-BL-FGc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="tintColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="dismissSettings:" destination="9zc-xt-2lc" eventType="touchUpInside" id="c6I-gg-iQu"/>
+                                    <action selector="showCards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PnT-10-yNh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vdH-8L-rvI" firstAttribute="trailing" secondItem="uSI-Jj-kaa" secondAttribute="trailing" id="3Ne-N5-eXH"/>
+                            <constraint firstItem="vdH-8L-rvI" firstAttribute="bottom" secondItem="uSI-Jj-kaa" secondAttribute="bottom" id="eoF-ia-mE5"/>
+                            <constraint firstItem="vdH-8L-rvI" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" id="u26-Yq-DwU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uSI-Jj-kaa"/>
                     </view>
                 </viewController>
