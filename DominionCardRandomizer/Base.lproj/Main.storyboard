@@ -95,15 +95,27 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="vdH-8L-rvI" firstAttribute="trailing" secondItem="uSI-Jj-kaa" secondAttribute="trailing" id="3Ne-N5-eXH"/>
                             <constraint firstItem="vdH-8L-rvI" firstAttribute="bottom" secondItem="uSI-Jj-kaa" secondAttribute="bottom" id="eoF-ia-mE5"/>
                             <constraint firstItem="vdH-8L-rvI" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" id="u26-Yq-DwU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uSI-Jj-kaa"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="D1g-CL-0Ye" appends="YES" id="EtO-IK-Nag"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="settingsSwipedDown" destination="DRD-pl-hgb" id="ooD-2n-fA3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6o-xf-sDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="D1g-CL-0Ye">
+                    <connections>
+                        <action selector="settingsSwipedDown:" destination="9zc-xt-2lc" id="Pzm-aN-4cB"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="921" y="133"/>
         </scene>

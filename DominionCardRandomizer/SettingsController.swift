@@ -9,6 +9,7 @@
 import UIKit
 
 class SettingsController: UIViewController {
+    @IBOutlet var settingsSwipedDown: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,11 @@ class SettingsController: UIViewController {
     @IBAction func dismissSettings(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func settingsSwipedDown(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     /*
     // MARK: - Navigation
