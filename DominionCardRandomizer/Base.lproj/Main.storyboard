@@ -94,17 +94,20 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="102" translatesAutoresizingMaskIntoConstraints="NO" id="aZq-gR-aws">
-                                <rect key="frame" x="77" y="96" width="199" height="31"/>
+                                <rect key="frame" x="44" y="237" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="kY1-fZ-M15">
+                                <rect key="frame" x="50" y="94" width="275" height="31"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N77-mw-4DR">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="31"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include Prosperity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N77-mw-4DR">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JyK-rl-ruc">
-                                        <rect key="frame" x="150" y="0.0" width="51" height="31"/>
+                                        <rect key="frame" x="226" y="0.0" width="51" height="31"/>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -112,15 +115,22 @@
                         <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="vdH-8L-rvI" firstAttribute="trailing" secondItem="uSI-Jj-kaa" secondAttribute="trailing" id="3Ne-N5-eXH"/>
-                            <constraint firstItem="vdH-8L-rvI" firstAttribute="bottom" secondItem="uSI-Jj-kaa" secondAttribute="bottom" id="eoF-ia-mE5"/>
-                            <constraint firstItem="vdH-8L-rvI" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" id="u26-Yq-DwU"/>
+                            <constraint firstItem="vdH-8L-rvI" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" id="0Fk-3E-2d7"/>
+                            <constraint firstItem="vdH-8L-rvI" firstAttribute="bottom" secondItem="uSI-Jj-kaa" secondAttribute="bottom" id="GfG-H0-EO9"/>
+                            <constraint firstItem="vdH-8L-rvI" firstAttribute="trailing" secondItem="uSI-Jj-kaa" secondAttribute="trailing" id="ckQ-DI-l3Q"/>
+                            <constraint firstItem="uSI-Jj-kaa" firstAttribute="trailing" secondItem="kY1-fZ-M15" secondAttribute="trailing" constant="50" id="fNV-pP-qw6"/>
+                            <constraint firstItem="kY1-fZ-M15" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" constant="50" id="otM-AA-fAB"/>
+                            <constraint firstItem="kY1-fZ-M15" firstAttribute="top" secondItem="uSI-Jj-kaa" secondAttribute="top" constant="50" id="pNV-pV-ioD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uSI-Jj-kaa"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="D1g-CL-0Ye" appends="YES" id="EtO-IK-Nag"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="doneButton" destination="vdH-8L-rvI" id="bCY-dg-k9T"/>
+                        <outlet property="includeProsperity" destination="JyK-rl-ruc" id="Cbs-5C-d5Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6o-xf-sDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="D1g-CL-0Ye">

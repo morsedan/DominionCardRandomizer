@@ -16,21 +16,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        categorizeCards(in: dominionDeck + prosperityDeck)
         // Do any additional setup after loading the view, typically from a nib.
-        categorizeCards(in: dominionDeck)
-        displayCardLabel.text = "Cards will appear here.\n\n\n\n\n\n\n\n\n"
     }
 
     @IBAction func showCards(_ sender: Any) {
-        /// 
+        
+        ///
         let randomColor = colorProvider.randomColor()
         view.backgroundColor = randomColor
         drawCardButton.tintColor = randomColor
-        
         displayCardLabel.text = determinePlayingCards()
     }
-    
-    
-    
-    
 }

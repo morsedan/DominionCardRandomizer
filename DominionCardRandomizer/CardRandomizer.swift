@@ -7,6 +7,7 @@
 //
 
 /// Set up empty decks for different categories.
+
 var attackDeck = [Card]()
 var defenseDeck = [Card]()
 var costsTwoDeck = [Card]()
@@ -46,6 +47,35 @@ func randomIndex(for group: [Any]) -> Int {
 /// Takes a deck and returns populated decks for the empty
 /// decks set up above.
 func categorizeCards(in deck: [Card]) {
+    
+    attackDeck = [Card]()
+    defenseDeck = [Card]()
+    costsTwoDeck = [Card]()
+    costsThreeDeck = [Card]()
+    costsFourDeck = [Card]()
+    costsFivePlusDeck = [Card]()
+    
+    plusZeroCard = [Card]()
+    plusOneCard = [Card]()
+    plusMoreCard = [Card]()
+    
+    plusZeroAction = [Card]()
+    plusOneAction = [Card]()
+    plusMoreAction = [Card]()
+    
+    plusZeroBuy = [Card]()
+    plusOneBuy = [Card]()
+    
+    plusZeroCoin = [Card]()
+    plusOneCoin = [Card]()
+    plusMoreCoin = [Card]()
+    
+    trashZeroCard = [Card]()
+    trashOneCard = [Card]()
+    trashMoreCard = [Card]()
+    
+    gainZeroCard = [Card]()
+    gainMoreCard = [Card]()
     
     for card in deck {
         if card.isAttack {
