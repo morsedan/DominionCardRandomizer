@@ -28,30 +28,21 @@ class SettingsController: UIViewController {
     
     @IBAction func dismissSettings(_ sender: Any) {
         includedDecks(include: includeProsperity.isOn)
-        print(includeProsperity.isOn)
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func settingsSwipedDown(_ sender: Any) {
         includedDecks(include: includeProsperity.isOn)
-        print(includeProsperityDeck)
         dismiss(animated: true, completion: nil)
     }
     
     func includedDecks(include: Bool) {
-        print("incpros: \(include)")
         if include {
             categorizeCards(in: dominionDeck + prosperityDeck)
         } else {
             categorizeCards(in: dominionDeck)
         }
     }
-//    func includeProsperityDeck() -> Bool {
-//        guard let includeProsperity = includeProsperity?.isOn else {
-//            return false
-//        }
-//        return includeProsperity
-//    }
     
     /*
     // MARK: - Navigation

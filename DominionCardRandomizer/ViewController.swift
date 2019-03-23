@@ -21,18 +21,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showCards(_ sender: Any) {
-//        if SettingsController().includeProsperity.isOn {
-//            let allDecks = dominionDeck + prosperityDeck
-//        } else {
-//            let allDecks = dominionDeck
-//        }
-//        let includePros = SettingsController().includeProsperityDeck
-//        if includePros {
-//            categorizeCards(in: dominionDeck + prosperityDeck)
-//        } else {
-//            categorizeCards(in: dominionDeck)
-//        }
-//        print(includePros)
+        
         ///
         let randomColor = colorProvider.randomColor()
         view.backgroundColor = randomColor
