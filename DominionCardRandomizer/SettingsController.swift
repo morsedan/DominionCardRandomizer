@@ -9,23 +9,49 @@
 import UIKit
 
 class SettingsController: UIViewController {
-
+    @IBOutlet weak var includeProsperity: UISwitch!
+    @IBOutlet weak var doneButton: UIButton!
+    
+    var includeProsperityDeck: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(red: 90/255.0, green: 187/255.0, blue: 181/255.0, alpha: 1.0)
+        let generatedColor = BackgroundColorProvider().colors[previousIndex]
+        view.backgroundColor = generatedColor
+        doneButton.tintColor = generatedColor
+        print(includeProsperity.isOn)
 
         // Do any additional setup after loading the view.
     }
     
+    
     @IBAction func dismissSettings(_ sender: Any) {
+        includedDecks(include: includeProsperity.isOn)
+        print(includeProsperity.isOn)
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func settingsSwipedDown(_ sender: Any) {
+        includedDecks(include: includeProsperity.isOn)
+        print(includeProsperityDeck)
         dismiss(animated: true, completion: nil)
     }
     
+    func includedDecks(include: Bool) {
+        print("incpros: \(include)")
+        if include {
+            categorizeCards(in: dominionDeck + prosperityDeck)
+        } else {
+            categorizeCards(in: dominionDeck)
+        }
+    }
+//    func includeProsperityDeck() -> Bool {
+//        guard let includeProsperity = includeProsperity?.isOn else {
+//            return false
+//        }
+//        return includeProsperity
+//    }
     
     /*
     // MARK: - Navigation
