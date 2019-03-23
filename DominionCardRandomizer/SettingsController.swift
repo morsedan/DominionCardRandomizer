@@ -12,15 +12,12 @@ class SettingsController: UIViewController {
     @IBOutlet weak var includeProsperity: UISwitch!
     @IBOutlet weak var doneButton: UIButton!
     
-    var includeProsperityDeck: Bool = true
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let generatedColor = BackgroundColorProvider().colors[previousIndex]
         view.backgroundColor = generatedColor
         doneButton.tintColor = generatedColor
-        print(includeProsperity.isOn)
 
         // Do any additional setup after loading the view.
     }
