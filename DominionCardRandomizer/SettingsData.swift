@@ -13,7 +13,7 @@ var plusBuySwitch: Bool = false
 var plusCoinSwitch: Bool = false
 var trashCardSwitchOn: Bool = false
 var gainCardSwitch: Bool = false
-var isAttackSwitch: Bool = false
+var isAttackSwitch: Bool = true
 var isDefenseSwitch: Bool = false
 
 var twoMin = 1

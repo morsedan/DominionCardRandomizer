@@ -84,7 +84,6 @@ func categorizeCards(in deck: Set<Card>) {
     var fullDeck: Set<Card> = deck
     print(fullDeck.count)
     
-    
     if prosperitySwitch {
         fullDeck = fullDeck.union(prosperityDeck)
         print(fullDeck.count)
