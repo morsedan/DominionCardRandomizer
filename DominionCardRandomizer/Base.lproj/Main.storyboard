@@ -98,16 +98,128 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="kY1-fZ-M15">
-                                <rect key="frame" x="50" y="94" width="275" height="31"/>
+                                <rect key="frame" x="25" y="94" width="325" height="31"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include Prosperity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N77-mw-4DR">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="31"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include Prosperity Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N77-mw-4DR">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JyK-rl-ruc">
-                                        <rect key="frame" x="226" y="0.0" width="51" height="31"/>
+                                        <rect key="frame" x="276" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="GkJ-7H-4Xj">
+                                <rect key="frame" x="25" y="133" width="325" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Require + Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R37-IT-OJ1">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hFm-u0-583">
+                                        <rect key="frame" x="276" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="YRU-8g-w2O">
+                                <rect key="frame" x="25" y="211" width="325" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Require + Buy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eb5-ah-jql">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nk5-Dr-jpv">
+                                        <rect key="frame" x="276" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="c2q-HW-6hr">
+                                <rect key="frame" x="25" y="250" width="325" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Require + Coin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="een-0X-vTh">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laP-Iv-HB5">
+                                        <rect key="frame" x="276" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="38h-Nk-6v9">
+                                <rect key="frame" x="25" y="289" width="325" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Require Trash Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6E-sh-2vH">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsE-xo-pap">
+                                        <rect key="frame" x="276" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="sbu-AG-lWk">
+                                <rect key="frame" x="25" y="328" width="325" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Require Gain Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewi-Vr-azO">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3iO-R1-Rbr">
+                                        <rect key="frame" x="276" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="axi-2Q-b9j">
+                                <rect key="frame" x="25" y="367" width="325" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Attack Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhN-Py-QXq">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RG0-jN-QtG">
+                                        <rect key="frame" x="276" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="Kik-dm-bc6">
+                                <rect key="frame" x="25" y="172" width="325" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Require + Action" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTY-AZ-ahn">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7K-yU-1to">
+                                        <rect key="frame" x="276" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="PHb-6S-FRh">
+                                <rect key="frame" x="25" y="406" width="325" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Require Reaction Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6v-o8-FuM">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U0l-hX-Cjh">
+                                        <rect key="frame" x="276" y="0.0" width="51" height="31"/>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -116,11 +228,35 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="vdH-8L-rvI" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" id="0Fk-3E-2d7"/>
+                            <constraint firstItem="uSI-Jj-kaa" firstAttribute="trailing" secondItem="Kik-dm-bc6" secondAttribute="trailing" constant="25" id="2Ck-5w-XxZ"/>
+                            <constraint firstItem="sbu-AG-lWk" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" constant="25" id="82i-5b-J5z"/>
+                            <constraint firstItem="uSI-Jj-kaa" firstAttribute="trailing" secondItem="38h-Nk-6v9" secondAttribute="trailing" constant="25" id="8J7-1Q-ebd"/>
                             <constraint firstItem="vdH-8L-rvI" firstAttribute="bottom" secondItem="uSI-Jj-kaa" secondAttribute="bottom" id="GfG-H0-EO9"/>
+                            <constraint firstItem="axi-2Q-b9j" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" constant="25" id="Nps-I6-rkC"/>
+                            <constraint firstItem="kY1-fZ-M15" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" constant="25" id="P0z-EG-DGl"/>
+                            <constraint firstItem="Kik-dm-bc6" firstAttribute="top" secondItem="GkJ-7H-4Xj" secondAttribute="bottom" constant="8" id="P5a-ww-i3F"/>
+                            <constraint firstItem="uSI-Jj-kaa" firstAttribute="trailing" secondItem="sbu-AG-lWk" secondAttribute="trailing" constant="25" id="PmY-fO-LIa"/>
+                            <constraint firstItem="uSI-Jj-kaa" firstAttribute="trailing" secondItem="GkJ-7H-4Xj" secondAttribute="trailing" constant="25" id="RIo-0v-zNY"/>
+                            <constraint firstItem="uSI-Jj-kaa" firstAttribute="trailing" secondItem="YRU-8g-w2O" secondAttribute="trailing" constant="25" id="TJu-7j-Xnt"/>
+                            <constraint firstItem="YRU-8g-w2O" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" constant="25" id="Val-PH-s30"/>
+                            <constraint firstItem="PHb-6S-FRh" firstAttribute="top" secondItem="axi-2Q-b9j" secondAttribute="bottom" constant="8" id="WJL-uF-oda"/>
+                            <constraint firstItem="YRU-8g-w2O" firstAttribute="top" secondItem="Kik-dm-bc6" secondAttribute="bottom" constant="8" id="WXL-CD-lo9"/>
+                            <constraint firstItem="GkJ-7H-4Xj" firstAttribute="top" secondItem="kY1-fZ-M15" secondAttribute="bottom" constant="8" id="XO6-se-zGm"/>
                             <constraint firstItem="vdH-8L-rvI" firstAttribute="trailing" secondItem="uSI-Jj-kaa" secondAttribute="trailing" id="ckQ-DI-l3Q"/>
-                            <constraint firstItem="uSI-Jj-kaa" firstAttribute="trailing" secondItem="kY1-fZ-M15" secondAttribute="trailing" constant="50" id="fNV-pP-qw6"/>
-                            <constraint firstItem="kY1-fZ-M15" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" constant="50" id="otM-AA-fAB"/>
+                            <constraint firstItem="GkJ-7H-4Xj" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" constant="25" id="fqg-g3-Jct"/>
+                            <constraint firstItem="c2q-HW-6hr" firstAttribute="top" secondItem="YRU-8g-w2O" secondAttribute="bottom" constant="8" id="gLl-8g-cex"/>
+                            <constraint firstItem="uSI-Jj-kaa" firstAttribute="trailing" secondItem="PHb-6S-FRh" secondAttribute="trailing" constant="25" id="gUs-l8-qE1"/>
+                            <constraint firstItem="uSI-Jj-kaa" firstAttribute="trailing" secondItem="axi-2Q-b9j" secondAttribute="trailing" constant="25" id="giy-uT-JUC"/>
+                            <constraint firstItem="axi-2Q-b9j" firstAttribute="top" secondItem="sbu-AG-lWk" secondAttribute="bottom" constant="8" id="jaN-hz-O8Y"/>
+                            <constraint firstItem="c2q-HW-6hr" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" constant="25" id="pH3-mz-jOk"/>
                             <constraint firstItem="kY1-fZ-M15" firstAttribute="top" secondItem="uSI-Jj-kaa" secondAttribute="top" constant="50" id="pNV-pV-ioD"/>
+                            <constraint firstItem="uSI-Jj-kaa" firstAttribute="trailing" secondItem="c2q-HW-6hr" secondAttribute="trailing" constant="25" id="rFD-MD-mNh"/>
+                            <constraint firstItem="uSI-Jj-kaa" firstAttribute="trailing" secondItem="kY1-fZ-M15" secondAttribute="trailing" constant="25" id="rHI-XM-vsz"/>
+                            <constraint firstItem="38h-Nk-6v9" firstAttribute="top" secondItem="c2q-HW-6hr" secondAttribute="bottom" constant="8" id="rl0-x2-8tz"/>
+                            <constraint firstItem="PHb-6S-FRh" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" constant="25" id="xPI-7q-w3k"/>
+                            <constraint firstItem="38h-Nk-6v9" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" constant="25" id="zNJ-Cm-7rU"/>
+                            <constraint firstItem="Kik-dm-bc6" firstAttribute="leading" secondItem="uSI-Jj-kaa" secondAttribute="leading" constant="25" id="zW3-Vf-9mF"/>
+                            <constraint firstItem="sbu-AG-lWk" firstAttribute="top" secondItem="38h-Nk-6v9" secondAttribute="bottom" constant="8" id="zoQ-Nw-1bU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uSI-Jj-kaa"/>
                         <connections>
@@ -128,8 +264,16 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="allowAttack" destination="RG0-jN-QtG" id="qLa-sc-fKa"/>
                         <outlet property="doneButton" destination="vdH-8L-rvI" id="bCY-dg-k9T"/>
                         <outlet property="includeProsperity" destination="JyK-rl-ruc" id="Cbs-5C-d5Y"/>
+                        <outlet property="requireAction" destination="J7K-yU-1to" id="C51-g4-7gq"/>
+                        <outlet property="requireBuy" destination="Nk5-Dr-jpv" id="SdQ-r2-ESg"/>
+                        <outlet property="requireCoin" destination="laP-Iv-HB5" id="j8L-sy-mwT"/>
+                        <outlet property="requireGain" destination="3iO-R1-Rbr" id="vdz-sh-zo2"/>
+                        <outlet property="requirePlus" destination="hFm-u0-583" id="yOl-Pe-Cdv"/>
+                        <outlet property="requireReaction" destination="U0l-hX-Cjh" id="7xy-c6-OYm"/>
+                        <outlet property="requireTrash" destination="fsE-xo-pap" id="IJH-cy-zSo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6o-xf-sDL" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -34,4 +34,4 @@ let watchtower = Card(name: "Watchtower", cost: 3, plusCard: 1, plusAction: 1, p
 let workersVillage = Card(name: "Worker's Village", cost: 4, plusCard: 1, plusAction: 2, plusBuy: 1, plusCoin: 1, trashCardUpTo: 0, gainCard: 0, isAttack: false, isDefense: false, fromDeck: "Prosperity")
 
 /// Add all Prosperity cards to prosperityDeck
-let prosperityDeck = [bank, bishop, contraband, city, countingHouse, expand, forge, goons, grandMarket, hoard, kingsCourt, loan, mint, monument, mountebank, peddler, quarry, rabble, royalSeal, talisman, tradeRoute, vault, venture, watchtower, workersVillage]
+let prosperityDeck: Set<Card> = [bank, bishop, contraband, city, countingHouse, expand, forge, goons, grandMarket, hoard, kingsCourt, loan, mint, monument, mountebank, peddler, quarry, rabble, royalSeal, talisman, tradeRoute, vault, venture, watchtower, workersVillage]

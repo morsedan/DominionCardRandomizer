@@ -14,9 +14,10 @@ class ViewController: UIViewController {
     
     let colorProvider = BackgroundColorProvider()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        categorizeCards(in: dominionDeck + prosperityDeck)
+        categorizeCards(in: dominionDeck)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
