@@ -8,34 +8,36 @@
 
 /// Set up empty decks for different categories.
 
-var attackDeck = [Card]()
-var defenseDeck = [Card]()
-var costsTwoDeck = [Card]()
-var costsThreeDeck = [Card]()
-var costsFourDeck = [Card]()
-var costsFivePlusDeck = [Card]()
+var attackDeck = Set<Card>()
+var defenseDeck = Set<Card>()
+var costsTwoDeck = Set<Card>()
+var costsThreeDeck = Set<Card>()
+var costsFourDeck = Set<Card>()
+var costsFivePlusDeck = Set<Card>()
 
-var plusZeroCard = [Card]()
-var plusOneCard = [Card]()
-var plusMoreCard = [Card]()
+var plusZeroCard = Set<Card>()
+var plusOneCard = Set<Card>()
+var plusMoreCard = Set<Card>()
 
-var plusZeroAction = [Card]()
-var plusOneAction = [Card]()
-var plusMoreAction = [Card]()
+var plusZeroAction = Set<Card>()
+var plusOneAction = Set<Card>()
+var plusMoreAction = Set<Card>()
 
-var plusZeroBuy = [Card]()
-var plusOneBuy = [Card]()
+var plusZeroBuy = Set<Card>()
+var plusOneBuy = Set<Card>()
 
-var plusZeroCoin = [Card]()
-var plusOneCoin = [Card]()
-var plusMoreCoin = [Card]()
+var plusZeroCoin = Set<Card>()
+var plusOneCoin = Set<Card>()
+var plusMoreCoin = Set<Card>()
 
-var trashZeroCard = [Card]()
-var trashOneCard = [Card]()
-var trashMoreCard = [Card]()
+var trashZeroCard = Set<Card>()
+var trashOneCard = Set<Card>()
+var trashMoreCard = Set<Card>()
 
-var gainZeroCard = [Card]()
-var gainMoreCard = [Card]()
+var gainZeroCard = Set<Card>()
+var gainMoreCard = Set<Card>()
+
+var workingDeck = Set<Card>()
 
 
 /// Returns a random number within the bounds of the index
@@ -44,85 +46,111 @@ func randomIndex(for group: [Any]) -> Int {
     return Int.random(in: 0..<group.count)
 }
 
+func resetDecks() {
+    attackDeck = []
+    defenseDeck = []
+    costsTwoDeck = []
+    costsThreeDeck = []
+    costsFourDeck = []
+    costsFivePlusDeck = []
+    
+    plusZeroCard = []
+    plusOneCard = []
+    plusMoreCard = []
+    
+    plusZeroAction = []
+    plusOneAction = []
+    plusMoreAction = []
+    
+    plusZeroBuy = []
+    plusOneBuy = []
+    
+    plusZeroCoin = []
+    plusOneCoin = []
+    plusMoreCoin = []
+    
+    trashZeroCard = []
+    trashOneCard = []
+    trashMoreCard = []
+    
+    gainZeroCard = []
+    gainMoreCard = []
+}
+
 /// Takes a deck and returns populated decks for the empty
 /// decks set up above.
-func categorizeCards(in deck: [Card]) {
+func categorizeCards(in deck: Set<Card>) {
     
-    attackDeck = [Card]()
-    defenseDeck = [Card]()
-    costsTwoDeck = [Card]()
-    costsThreeDeck = [Card]()
-    costsFourDeck = [Card]()
-    costsFivePlusDeck = [Card]()
+    var fullDeck: Set<Card> = deck
+    print(fullDeck.count)
     
-    plusZeroCard = [Card]()
-    plusOneCard = [Card]()
-    plusMoreCard = [Card]()
+    if prosperitySwitch {
+        fullDeck = fullDeck.union(prosperityDeck)
+        print(fullDeck.count)
+    }
     
-    plusZeroAction = [Card]()
-    plusOneAction = [Card]()
-    plusMoreAction = [Card]()
+    resetDecks()
     
-    plusZeroBuy = [Card]()
-    plusOneBuy = [Card]()
-    
-    plusZeroCoin = [Card]()
-    plusOneCoin = [Card]()
-    plusMoreCoin = [Card]()
-    
-    trashZeroCard = [Card]()
-    trashOneCard = [Card]()
-    trashMoreCard = [Card]()
-    
-    gainZeroCard = [Card]()
-    gainMoreCard = [Card]()
-    
-    for card in deck {
+    for card in fullDeck {
         if card.isAttack {
-            attackDeck.append(card)
+            attackDeck.insert(card)
         }
         if card.isDefense {
-            defenseDeck.append(card)
-        }
-        switch card.cost {
-        case 2: costsTwoDeck.append(card)
-        case 3: costsThreeDeck.append(card)
-        case 4: costsFourDeck.append(card)
-        default: costsFivePlusDeck.append(card)
+            defenseDeck.insert(card)
         }
         switch card.plusCard {
-        case 0: plusZeroCard.append(card)
-        case 1: plusOneCard.append(card)
-        default: plusMoreCard.append(card)
+        case 0: plusZeroCard.insert(card)
+        case 1: plusOneCard.insert(card)
+        default: plusMoreCard.insert(card)
         }
         switch card.plusAction {
-        case 0: plusZeroAction.append(card)
-        case 1: plusOneAction.append(card)
-        default: plusMoreAction.append(card)
+        case 0: plusZeroAction.insert(card)
+        case 1: plusOneAction.insert(card)
+        default: plusMoreAction.insert(card)
         }
         switch card.plusBuy {
-        case 0: plusZeroBuy.append(card)
-        default: plusOneBuy.append(card)
+        case 0: plusZeroBuy.insert(card)
+        default: plusOneBuy.insert(card)
         }
         switch card.plusCoin {
-        case 0: plusZeroCoin.append(card)
-        case 1: plusOneCoin.append(card)
-        default: plusMoreCoin.append(card)
+        case 0: plusZeroCoin.insert(card)
+        case 1: plusOneCoin.insert(card)
+        default: plusMoreCoin.insert(card)
         }
         switch card.trashCardUpTo {
-        case 0: trashZeroCard.append(card)
-        case 1: trashOneCard.append(card)
-        default: trashMoreCard.append(card)
+        case 0: trashZeroCard.insert(card)
+        case 1: trashOneCard.insert(card)
+        default: trashMoreCard.insert(card)
         }
         switch card.gainCard {
-        case 0: gainZeroCard.append(card)
-        default: gainMoreCard.append(card)
+        case 0: gainZeroCard.insert(card)
+        default: gainMoreCard.insert(card)
+        }
+        
+        switch card.cost {
+        case 2: costsTwoDeck.insert(card)
+        case 3: costsThreeDeck.insert(card)
+        case 4: costsFourDeck.insert(card)
+        default: costsFivePlusDeck.insert(card)
         }
     }
+    filterOutUnwantedCards(fullDeck: fullDeck)
+}
+
+func filterOutUnwantedCards(fullDeck: Set<Card>) {
+    
+    if isAttackSwitch {
+        workingDeck = fullDeck.union(attackDeck)
+    } else if !isAttackSwitch {
+        workingDeck = fullDeck.subtracting(attackDeck)
+    }
+    print("****** Working Deck: \(workingDeck.count) *******")
+    
 }
 
 /// Returns a given number of Cards from a deck as a string.
-func createRandomDeck(from deck: [Card], with amount: Int) -> [String] {
+func createRandomDeck(from deck: Set<Card>, with amount: Int) -> [String] {
+    let deck = Array(deck)
     var playCards = [String]()
     for _ in 1...amount {
         var nextCard: String
@@ -156,21 +184,14 @@ func determineCardAmounts(twoRange: (Int, Int), threeRange: (Int, Int), fourRang
 /// Returns a list of the cards that will be used in the
 /// form of a string.
 func determinePlayingCards() -> String {
-    let twoMin = 1
-    let twoMax = 2
-    let threeMin = 1
-    let threeMax = 3
-    let fourMin = 2
-    let fourMax = 5
-    let fivePlusMin = 1
-    let fivePlusMax = 4
-    let cardAmounts = determineCardAmounts(twoRange: (twoMin, twoMax), threeRange: (threeMin, threeMax), fourRange: (fourMin, fourMax), fivePlusRange: (fivePlusMin, fivePlusMax))
     
-    let playingTwos = (createRandomDeck(from: costsTwoDeck, with: cardAmounts[0]))
-    let playingThrees = (createRandomDeck(from: costsThreeDeck, with: cardAmounts[1]))
-    let playingFours = (createRandomDeck(from: costsFourDeck, with: cardAmounts[2]))
-    let playingFivePlus = (createRandomDeck(from: costsFivePlusDeck, with: cardAmounts[3]))
+    let playingTwos = (createRandomDeck(from: workingDeck.intersection(costsTwoDeck), with: cardAmounts[0]))
+    let playingThrees = (createRandomDeck(from: workingDeck.intersection(costsThreeDeck), with: cardAmounts[1]))
+    let playingFours = (createRandomDeck(from: workingDeck.intersection(costsFourDeck), with: cardAmounts[2]))
+    let playingFivePlus = (createRandomDeck(from: workingDeck.intersection(costsFivePlusDeck), with: cardAmounts[3]))
     let playingCards = (playingTwos + playingThrees + playingFours + playingFivePlus).sorted()
     
     return "\(playingCards[0])\n\(playingCards[1])\n\(playingCards[2])\n\(playingCards[3])\n\(playingCards[4])\n\(playingCards[5])\n\(playingCards[6])\n\(playingCards[7])\n\(playingCards[8])\n\(playingCards[9])"
 }
+
+

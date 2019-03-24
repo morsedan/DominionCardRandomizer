@@ -10,6 +10,14 @@ import UIKit
 
 class SettingsController: UIViewController {
     @IBOutlet weak var includeProsperity: UISwitch!
+    @IBOutlet weak var requirePlus: UISwitch!
+    @IBOutlet weak var requireAction: UISwitch!
+    @IBOutlet weak var requireBuy: UISwitch!
+    @IBOutlet weak var requireCoin: UISwitch!
+    @IBOutlet weak var requireTrash: UISwitch!
+    @IBOutlet weak var requireGain: UISwitch!
+    @IBOutlet weak var allowAttack: UISwitch!
+    @IBOutlet weak var requireReaction: UISwitch!
     @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
@@ -18,28 +26,85 @@ class SettingsController: UIViewController {
         let generatedColor = BackgroundColorProvider().colors[previousIndex]
         view.backgroundColor = generatedColor
         doneButton.tintColor = generatedColor
-
-        // Do any additional setup after loading the view.
+        includeProsperity.setOn(prosperitySwitch, animated: false)
+        requirePlus.setOn(plusCardSwitch, animated: false)
+        requireAction.setOn(plusActionSwitch, animated: false)
+        requireBuy.setOn(plusBuySwitch, animated: false)
+        requireCoin.setOn(plusCoinSwitch, animated: false)
+        requireTrash.setOn(trashCardSwitchOn, animated: false)
+        requireGain.setOn(gainCardSwitch, animated: false)
+        allowAttack.setOn(isAttackSwitch, animated: false)
+        requireReaction.setOn(isDefenseSwitch, animated: false)
+        
+        includeProsperity.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
+        requirePlus.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
+        requireAction.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
+        requireBuy.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
+        requireCoin.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
+        requireTrash.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
+        requireGain.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
+        allowAttack.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
+        requireReaction.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
     }
     
     
     @IBAction func dismissSettings(_ sender: Any) {
-        includedDecks(include: includeProsperity.isOn)
+        prosperitySwitch = includeProsperity.isOn
+        plusCardSwitch = requirePlus.isOn
+        plusActionSwitch = requireAction.isOn
+        plusBuySwitch = requireBuy.isOn
+        plusCoinSwitch = requireCoin.isOn
+        trashCardSwitchOn = requireTrash.isOn
+        gainCardSwitch = requireGain.isOn
+        isAttackSwitch = allowAttack.isOn
+        isDefenseSwitch = requireReaction.isOn
+        
+        twoMin = 1
+        twoMax = 2
+        threeMin = 1
+        threeMax = 3
+        fourMin = 2
+        fourMax = 5
+        fivePlusMin = 1
+        fivePlusMax = 4
+        categorizeCards(in: dominionDeck)
+//        includedDecks(prosperity: includeProsperity.isOn)
+        // FIXME: reset displayCardLabel.text
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func settingsSwipedDown(_ sender: Any) {
-        includedDecks(include: includeProsperity.isOn)
+        prosperitySwitch = includeProsperity.isOn
+        plusCardSwitch = requirePlus.isOn
+        plusActionSwitch = requireAction.isOn
+        plusBuySwitch = requireBuy.isOn
+        plusCoinSwitch = requireCoin.isOn
+        trashCardSwitchOn = requireTrash.isOn
+        gainCardSwitch = requireGain.isOn
+        isAttackSwitch = allowAttack.isOn
+        isDefenseSwitch = requireReaction.isOn
+        
+        twoMin = 1
+        twoMax = 2
+        threeMin = 1
+        threeMax = 3
+        fourMin = 2
+        fourMax = 5
+        fivePlusMin = 1
+        fivePlusMax = 4
+        categorizeCards(in: dominionDeck)
+//        includedDecks(prosperity: includeProsperity.isOn)
+        // FIXME: reset displayCardLabel.text
         dismiss(animated: true, completion: nil)
     }
     
-    func includedDecks(include: Bool) {
-        if include {
-            categorizeCards(in: dominionDeck + prosperityDeck)
-        } else {
-            categorizeCards(in: dominionDeck)
-        }
-    }
+//    func includedDecks(prosperity: Bool) {
+//        if prosperity {
+//            categorizeCards(in: dominionDeck + prosperityDeck)
+//        } else {
+//            categorizeCards(in: dominionDeck)
+//        }
+//    }
     
     /*
     // MARK: - Navigation

@@ -6,5 +6,5 @@
 //  Copyright © 2019 morse. All rights reserved.
 //
 
-
+var desiredDecks = [dominionDeck]
 
