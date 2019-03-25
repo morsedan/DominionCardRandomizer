@@ -10,12 +10,12 @@
 struct Card: Hashable {
     let name: String
     let cost: Int
-    let plusCard: Int
-    let plusAction: Int
-    let plusBuy: Int
-    let plusCoin: Int
-    let trashCardUpTo: Int
-    let gainCard: Int
+    let plusCard: Bool
+    let plusAction: Bool
+    let plusBuy: Bool
+    let plusCoin: Bool
+    let trashCardUpTo: Bool
+    let gainCard: Bool
     let isAttack: Bool
     let isDefense: Bool
     let fromDeck: String
