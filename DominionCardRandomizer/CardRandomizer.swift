@@ -146,7 +146,7 @@ func checkFor(addCards: Int, actions: Int, buys: Int, coins: Int, trashes: Int, 
     if (gainCardSwitch && gains >= 1) || !gainCardSwitch {
         gainRight = true
     }
-    
+    print("Check: \(addCardRight && actionRight && buyRight && coinRight && trashRight && gainRight)")
     return addCardRight && actionRight && buyRight && coinRight && trashRight && gainRight
 }
 
@@ -211,6 +211,7 @@ func determineCardAmounts(twoRange: (Int, Int), threeRange: (Int, Int), fourRang
         twoThroughFour = twoAmount + threeAmount + fourAmount
     } while 10 - twoThroughFour < fivePlusRange.0 || 10 - twoThroughFour > fivePlusRange.1
     fivePlusAmount = 10 - twoThroughFour
+    print(twoAmount, threeAmount, fourAmount, fivePlusAmount)
     return [twoAmount, threeAmount, fourAmount, fivePlusAmount]
 }
 
