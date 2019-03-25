@@ -31,7 +31,7 @@ class SettingsController: UIViewController {
         requireAction.setOn(plusActionSwitch, animated: false)
         requireBuy.setOn(plusBuySwitch, animated: false)
         requireCoin.setOn(plusCoinSwitch, animated: false)
-        requireTrash.setOn(trashCardSwitchOn, animated: false)
+        requireTrash.setOn(trashCardSwitch, animated: false)
         requireGain.setOn(gainCardSwitch, animated: false)
         allowAttack.setOn(isAttackSwitch, animated: false)
         requireReaction.setOn(isDefenseSwitch, animated: false)
@@ -54,7 +54,7 @@ class SettingsController: UIViewController {
         plusActionSwitch = requireAction.isOn
         plusBuySwitch = requireBuy.isOn
         plusCoinSwitch = requireCoin.isOn
-        trashCardSwitchOn = requireTrash.isOn
+        trashCardSwitch = requireTrash.isOn
         gainCardSwitch = requireGain.isOn
         isAttackSwitch = allowAttack.isOn
         isDefenseSwitch = requireReaction.isOn
@@ -79,7 +79,7 @@ class SettingsController: UIViewController {
         plusActionSwitch = requireAction.isOn
         plusBuySwitch = requireBuy.isOn
         plusCoinSwitch = requireCoin.isOn
-        trashCardSwitchOn = requireTrash.isOn
+        trashCardSwitch = requireTrash.isOn
         gainCardSwitch = requireGain.isOn
         isAttackSwitch = allowAttack.isOn
         isDefenseSwitch = requireReaction.isOn
