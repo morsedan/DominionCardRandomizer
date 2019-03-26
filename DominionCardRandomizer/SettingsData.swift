@@ -7,13 +7,13 @@
 //
 
 var prosperitySwitch: Bool = false
-var plusCardSwitch: Bool = true//false
-var plusActionSwitch: Bool = true//false
-var plusBuySwitch: Bool = true//false
-var plusCoinSwitch: Bool = true//false
-var trashCardSwitch: Bool = true//false
-var gainCardSwitch: Bool = true//false
-var isAttackSwitch: Bool = false//true
+var plusCardSwitch: Bool = false
+var plusActionSwitch: Bool = false
+var plusBuySwitch: Bool = false
+var plusCoinSwitch: Bool = false
+var trashCardSwitch: Bool = false
+var gainCardSwitch: Bool = false
+var isAttackSwitch: Bool = true
 var isDefenseSwitch: Bool = false
 
 var twoMin = 1
