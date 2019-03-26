@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        categorizeCards(in: dominionDeck)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -27,6 +26,7 @@ class ViewController: UIViewController {
         let randomColor = colorProvider.randomColor()
         view.backgroundColor = randomColor
         drawCardButton.tintColor = randomColor
-        displayCardLabel.text = determinePlayingCards()
+        
+        displayCardLabel.text = getCards()
     }
 }

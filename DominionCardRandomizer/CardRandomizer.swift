@@ -19,6 +19,8 @@ enum CardTypes{
     case defense
 }
 
+var playingCardString: [String] = []
+
 var costsTwoDeck = Set<Card>()
 var costsThreeDeck = Set<Card>()
 var costsFourDeck = Set<Card>()
@@ -61,14 +63,12 @@ func resetDecks() {
 
 /// Takes a deck and returns populated decks for the empty
 /// decks set up above.
-func categorizeCards(in deck: Set<Card>) {
+func categorizeCards(in deck: Set<Card>) -> Set<Card> {
     
     var fullDeck: Set<Card> = deck
-    print(fullDeck.count)
     
     if prosperitySwitch {
         fullDeck = fullDeck.union(prosperityDeck)
-        print(fullDeck.count)
     }
     
     resetDecks()
@@ -107,16 +107,51 @@ func categorizeCards(in deck: Set<Card>) {
         default: costsFivePlusDeck.insert(card)
         }
     }
-    filterOutUnwantedCards(fullDeck: fullDeck)
+    return fullDeck
 }
 
-func filterOutUnwantedCards(fullDeck: Set<Card>) {
+func filterOutUnwantedCards(fullDeck: Set<Card>) -> Set<Card> {
     
     if isAttackSwitch {
         workingDeck = fullDeck.union(attack)
     } else if !isAttackSwitch {
         workingDeck = fullDeck.subtracting(attack)
     }
+    return workingDeck
+}
+
+func countCards(in playingCards: [Card]) -> [Int] {
+    
+    var addCardCount = 0
+    var actionCount = 0
+    var buyCount = 0
+    var coinCount = 0
+    var trashCount = 0
+    var gainCount = 0
+    
+    for card in playingCards {
+        if card.plusCard {
+            addCardCount += 1
+        }
+        if card.plusAction {
+            actionCount += 1
+        }
+        if card.plusBuy {
+            buyCount += 1
+        }
+        if card.plusCoin {
+            coinCount += 1
+        }
+        if card.trashCardUpTo {
+            trashCount += 1
+        }
+        if card.gainCard {
+            gainCount += 1
+        }
+    }
+    
+    let counts = [addCardCount, actionCount, buyCount, coinCount, trashCount, gainCount]
+    return counts
 }
 
 func checkFor(addCards: Int, actions: Int, buys: Int, coins: Int, trashes: Int, gains: Int) -> Bool{
@@ -146,54 +181,8 @@ func checkFor(addCards: Int, actions: Int, buys: Int, coins: Int, trashes: Int, 
     if (gainCardSwitch && gains >= 1) || !gainCardSwitch {
         gainRight = true
     }
-    print("Check: \(addCardRight && actionRight && buyRight && coinRight && trashRight && gainRight)")
-    return addCardRight && actionRight && buyRight && coinRight && trashRight && gainRight
-}
-
-/// Returns a given number of Cards from a deck as a string.
-func createRandomDeck(from deck: Set<Card>, with amount: Int) -> [String] {
-    let deck = Array(deck)
-    var playCards = [String]()
-    var addCardCount = 0
-    var actionCount = 0
-    var buyCount = 0
-    var coinCount = 0
-    var trashCount = 0
-    var gainCount = 0
     
-    for _ in 1...amount {
-        var nextCard: String
-        repeat {
-            let randomNumber = randomIndex(for: deck)
-            
-            if deck[randomNumber].plusCard {
-                addCardCount += 1
-            }
-            if deck[randomNumber].plusAction {
-                actionCount += 1
-            }
-            if deck[randomNumber].plusBuy {
-                buyCount += 1
-            }
-            if deck[randomNumber].plusCoin {
-                coinCount += 1
-            }
-            if deck[randomNumber].trashCardUpTo {
-                trashCount += 1
-            }
-            if deck[randomNumber].gainCard {
-                gainCount += 1
-            }
-            print("\(deck[randomNumber].cost)\(deck[randomNumber].plusCard)")
-            nextCard = "\(deck[randomNumber].name): \(deck[randomNumber].cost)"
-        } while playCards.contains(nextCard)
-        playCards.append(nextCard)
-    }
-    if checkFor(addCards: addCardCount, actions: actionCount, buys: buyCount, coins: coinCount, trashes: trashCount, gains: gainCount) {
-        return playCards.sorted()
-    } else {
-        return createRandomDeck(from: Set(deck), with: amount)
-    }
+    return addCardRight && actionRight && buyRight && coinRight && trashRight && gainRight
 }
 
 /// Determines how many cards are needed from each cost
@@ -211,22 +200,76 @@ func determineCardAmounts(twoRange: (Int, Int), threeRange: (Int, Int), fourRang
         twoThroughFour = twoAmount + threeAmount + fourAmount
     } while 10 - twoThroughFour < fivePlusRange.0 || 10 - twoThroughFour > fivePlusRange.1
     fivePlusAmount = 10 - twoThroughFour
-    print(twoAmount, threeAmount, fourAmount, fivePlusAmount)
+    
     return [twoAmount, threeAmount, fourAmount, fivePlusAmount]
 }
 
-/// Returns a list of the cards that will be used in the
-/// form of a string.
-func determinePlayingCards() -> String {
+/// Returns a given number of Cards from a deck as a string.
+func createRandomDeck(from deck: Set<Card>, with amount: Int) -> [Card] {
+    let deck = Array(deck)
+    var playCards = [Card]()
     
-    let playingTwos = (createRandomDeck(from: workingDeck.intersection(costsTwoDeck), with: cardAmounts[0]))
-    let playingThrees = (createRandomDeck(from: workingDeck.intersection(costsThreeDeck), with: cardAmounts[1]))
-    let playingFours = (createRandomDeck(from: workingDeck.intersection(costsFourDeck), with: cardAmounts[2]))
-    let playingFivePlus = (createRandomDeck(from: workingDeck.intersection(costsFivePlusDeck), with: cardAmounts[3]))
     
-    let playingCards = (playingTwos + playingThrees + playingFours + playingFivePlus).sorted()
+    for _ in 1...amount {
+        var nextCard: Card
+        repeat {
+            let randomNumber = randomIndex(for: deck)
+            nextCard = deck[randomNumber]
+        } while playCards.contains(nextCard)
+        
+        playCards.append(nextCard)
+    }
+    return playCards
+}
+
+
+/// Returns a list of the cards that will be used
+func determinePlayingCards(cardAmounts: [Int]) -> [Card] {
     
-    print("*********")
+    let playingTwos = createRandomDeck(from: workingDeck.intersection(costsTwoDeck), with: cardAmounts[0])
+    let playingThrees = createRandomDeck(from: workingDeck.intersection(costsThreeDeck), with: cardAmounts[1])
+    let playingFours = createRandomDeck(from: workingDeck.intersection(costsFourDeck), with: cardAmounts[2])
+    let playingFivePlus = createRandomDeck(from: workingDeck.intersection(costsFivePlusDeck), with: cardAmounts[3])
     
-    return "\(playingCards[0])\n\(playingCards[1])\n\(playingCards[2])\n\(playingCards[3])\n\(playingCards[4])\n\(playingCards[5])\n\(playingCards[6])\n\(playingCards[7])\n\(playingCards[8])\n\(playingCards[9])"
+    let playingCards = Array(playingTwos + playingThrees + playingFours + playingFivePlus)
+    
+    return playingCards
+    
+//    print("+ Cards: \(cardCounts[0])\n+ Actions: \(cardCounts[1])\n+ Buys: \(cardCounts[2])\n+ Coins: \(cardCounts[3])\nTrash: \(cardCounts[4])\nGain: \(cardCounts[5])")
+//    print("*********")
+    
+
+}
+
+func getCards() -> String {
+    
+    var countArray: [Int] = []
+    var playingCards: [Card] = []
+    playingCardString = []
+    var attempt = 1
+    
+    repeat {
+        let fullDeck = categorizeCards(in: dominionDeck)
+        workingDeck = filterOutUnwantedCards(fullDeck: fullDeck)
+        
+        let amountArray = determineCardAmounts(twoRange: (twoMin, twoMax), threeRange: (threeMin, threeMax), fourRange: (fourMin, fourMax), fivePlusRange: (fivePlusMin, fivePlusMax))
+        
+        playingCards = determinePlayingCards(cardAmounts: amountArray)
+        
+        countArray = countCards(in: playingCards)
+        
+        print("******** \(attempt) *********")
+        attempt += 1
+        for card in 0..<playingCards.count {
+            print("Name: \(playingCards[card].name) + Action: \(playingCards[card].plusAction)")//"\n+ Buy: \(playingCards[card].plusBuy)\n+ Coin: \(playingCards[card].plusCoin)\nTrash: \(playingCards[card].trashCardUpTo)\nGain: \(playingCards[card].gainCard)\nCost: \(playingCards[card].cost)\n+ Card: \(playingCards[card].plusCard)")
+        }
+
+    } while !checkFor(addCards: countArray[0], actions: countArray[1], buys: countArray[2], coins: countArray[3], trashes: countArray[4], gains: countArray[5])
+    
+    for card in playingCards {
+        playingCardString.append("\(card.name): \(card.cost)")
+    }
+    playingCardString = playingCardString.sorted()
+    
+    return "\(playingCardString[0])\n\(playingCardString[1])\n\(playingCardString[2])\n\(playingCardString[3])\n\(playingCardString[4])\n\(playingCardString[5])\n\(playingCardString[6])\n\(playingCardString[7])\n\(playingCardString[8])\n\(playingCardString[9])"
 }
