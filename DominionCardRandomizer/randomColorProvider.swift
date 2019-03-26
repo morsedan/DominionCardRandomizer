@@ -29,7 +29,7 @@ struct BackgroundColorProvider {
     func randomColor() -> UIColor {
         var randomNumber = 0
         repeat {
-            randomNumber = randomIndex(for: colors)
+            randomNumber = Int.random(in: 0..<colors.count)
         } while randomNumber == previousIndex
         previousIndex = randomNumber
         return colors[randomNumber]

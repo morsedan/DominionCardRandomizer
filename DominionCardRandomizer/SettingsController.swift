@@ -67,7 +67,6 @@ class SettingsController: UIViewController {
         fourMax = 5
         fivePlusMin = 1
         fivePlusMax = 4
-        categorizeCards(in: dominionDeck)
 //        includedDecks(prosperity: includeProsperity.isOn)
         // FIXME: reset displayCardLabel.text
         dismiss(animated: true, completion: nil)
@@ -92,7 +91,6 @@ class SettingsController: UIViewController {
         fourMax = 5
         fivePlusMin = 1
         fivePlusMax = 4
-        categorizeCards(in: dominionDeck)
 //        includedDecks(prosperity: includeProsperity.isOn)
         // FIXME: reset displayCardLabel.text
         dismiss(animated: true, completion: nil)
