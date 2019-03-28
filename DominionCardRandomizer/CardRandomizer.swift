@@ -128,6 +128,7 @@ func countCards(in playingCards: [Card]) -> [Int] {
     var coinCount = 0
     var trashCount = 0
     var gainCount = 0
+    var defenseCount = 0
     
     for card in playingCards {
         if card.plusCard {
@@ -148,13 +149,16 @@ func countCards(in playingCards: [Card]) -> [Int] {
         if card.gainCard {
             gainCount += 1
         }
+        if card.isDefense {
+            defenseCount += 1
+        }
     }
     
-    let counts = [addCardCount, actionCount, buyCount, coinCount, trashCount, gainCount]
+    let counts = [addCardCount, actionCount, buyCount, coinCount, trashCount, gainCount, defenseCount]
     return counts
 }
 
-func checkFor(addCards: Int, actions: Int, buys: Int, coins: Int, trashes: Int, gains: Int) -> Bool{
+func checkFor(addCards: Int, actions: Int, buys: Int, coins: Int, trashes: Int, gains: Int, defense: Int) -> Bool{
     
     var addCardRight = false
     var actionRight = false
@@ -162,6 +166,7 @@ func checkFor(addCards: Int, actions: Int, buys: Int, coins: Int, trashes: Int, 
     var coinRight = false
     var trashRight = false
     var gainRight = false
+    var defenseRight = false
     
     if (plusCardSwitch && addCards >= 1) || !plusCardSwitch {
         addCardRight = true
@@ -181,8 +186,11 @@ func checkFor(addCards: Int, actions: Int, buys: Int, coins: Int, trashes: Int, 
     if (gainCardSwitch && gains >= 1) || !gainCardSwitch {
         gainRight = true
     }
+    if (isDefenseSwitch && defense >= 1) || !isDefenseSwitch {
+        defenseRight = true
+    }
     
-    return addCardRight && actionRight && buyRight && coinRight && trashRight && gainRight
+    return addCardRight && actionRight && buyRight && coinRight && trashRight && gainRight && defenseRight
 }
 
 /// Determines how many cards are needed from each cost
@@ -261,10 +269,10 @@ func getCards() -> String {
         print("******** \(attempt) *********")
         attempt += 1
         for card in 0..<playingCards.count {
-            print("Name: \(playingCards[card].name) + Action: \(playingCards[card].plusAction)")//"\n+ Buy: \(playingCards[card].plusBuy)\n+ Coin: \(playingCards[card].plusCoin)\nTrash: \(playingCards[card].trashCardUpTo)\nGain: \(playingCards[card].gainCard)\nCost: \(playingCards[card].cost)\n+ Card: \(playingCards[card].plusCard)")
+            print("Name: \(playingCards[card].name) Defense: \(playingCards[card].isDefense)")//"\n+ \n+ Coin: \(playingCards[card].plusCoin)\nTrash: \(playingCards[card].trashCardUpTo)\nGain: \(playingCards[card].gainCard)\nCost: \(playingCards[card].cost)\n+ Card: \(playingCards[card].plusCard)\(playingCards[card].plusAction) + Buy: \(playingCards[card].plusBuy) ")
         }
 
-    } while !checkFor(addCards: countArray[0], actions: countArray[1], buys: countArray[2], coins: countArray[3], trashes: countArray[4], gains: countArray[5])
+    } while !checkFor(addCards: countArray[0], actions: countArray[1], buys: countArray[2], coins: countArray[3], trashes: countArray[4], gains: countArray[5], defense: countArray[6])
     
     for card in playingCards {
         playingCardString.append("\(card.name): \(card.cost)")
