@@ -269,7 +269,7 @@ func getCards() -> String {
         print("******** \(attempt) *********")
         attempt += 1
         for card in 0..<playingCards.count {
-            print("Name: \(playingCards[card].name) + Buy: \(playingCards[card].plusBuy) Defense: \(playingCards[card].isDefense)")//"\n+ \n+ Coin: \(playingCards[card].plusCoin)\nTrash: \(playingCards[card].trashCardUpTo)\nGain: \(playingCards[card].gainCard)\nCost: \(playingCards[card].cost)\n+ Card: \(playingCards[card].plusCard)\(playingCards[card].plusAction)")
+            print("Name: \(playingCards[card].name) Defense: \(playingCards[card].isDefense)")//"\n+ \n+ Coin: \(playingCards[card].plusCoin)\nTrash: \(playingCards[card].trashCardUpTo)\nGain: \(playingCards[card].gainCard)\nCost: \(playingCards[card].cost)\n+ Card: \(playingCards[card].plusCard)\(playingCards[card].plusAction) + Buy: \(playingCards[card].plusBuy) ")
         }
 
     } while !checkFor(addCards: countArray[0], actions: countArray[1], buys: countArray[2], coins: countArray[3], trashes: countArray[4], gains: countArray[5], defense: countArray[6])
