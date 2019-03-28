@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cards will appear here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yty-pW-Mxk">
-                                <rect key="frame" x="20" y="244" width="335" height="277"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BmC-Eh-kzR">
                                 <rect key="frame" x="128" y="742" width="119" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -48,17 +41,29 @@
                                     <action selector="showCards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fWa-eX-kb6"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cards will appear here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yty-pW-Mxk">
+                                <rect key="frame" x="0.0" y="134" width="375" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="bbs-Ov-aeI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.3529411764705882" green="0.73333333333333328" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WQF-Fh-xw4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1y7-FE-gtW"/>
                             <constraint firstItem="WQF-Fh-xw4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BOF-Ce-iTe"/>
                             <constraint firstItem="BmC-Eh-kzR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FIm-KY-DS0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yty-pW-Mxk" secondAttribute="trailing" id="IpY-iQ-AYz"/>
                             <constraint firstItem="BmC-Eh-kzR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JUw-r1-pRh"/>
                             <constraint firstItem="BmC-Eh-kzR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JVr-IY-wHu"/>
                             <constraint firstItem="BmC-Eh-kzR" firstAttribute="top" secondItem="WQF-Fh-xw4" secondAttribute="bottom" constant="24" id="LiP-WI-LYE"/>
+                            <constraint firstItem="yty-pW-Mxk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="eEc-TQ-bPZ"/>
                             <constraint firstItem="BmC-Eh-kzR" firstAttribute="top" secondItem="WQF-Fh-xw4" secondAttribute="bottom" constant="6" id="fSm-g8-giC"/>
                             <constraint firstItem="BmC-Eh-kzR" firstAttribute="top" secondItem="WQF-Fh-xw4" secondAttribute="bottom" constant="6" id="pq5-PH-xal"/>
+                            <constraint firstItem="yty-pW-Mxk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zHN-QL-iUp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
