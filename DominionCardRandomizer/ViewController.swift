@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        displayCardLabel.text = "Tap \"Draw Cards\" to get\n10 random cards.\n\nTap \"Card Settings\" to Change\nwhich cards you get."
     }
 
     @IBAction func showCards(_ sender: Any) {
