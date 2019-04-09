@@ -8,7 +8,7 @@
 
 /// Set up empty decks for different categories.
 
-enum CardTypes{
+enum CardTypes {
     case addCard
     case action
     case buy
@@ -69,6 +69,10 @@ func categorizeCards(in deck: Set<Card>) -> Set<Card> {
     
     if prosperitySwitch {
         fullDeck = fullDeck.union(prosperityDeck)
+    }
+    
+    if intrigueSwitch {
+        fullDeck = fullDeck.union(intrigueDeck)
     }
     
     resetDecks()
