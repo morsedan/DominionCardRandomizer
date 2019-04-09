@@ -13,6 +13,8 @@
 		C042393B2245658B00E37E16 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C042393A2245658B00E37E16 /* SettingsController.swift */; };
 		C042393D2245788900E37E16 /* allDecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C042393C2245788900E37E16 /* allDecks.swift */; };
 		C042393F22469F7F00E37E16 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C042393E22469F7F00E37E16 /* SettingsData.swift */; };
+		C0E8DFD6225D1085008671C0 /* ExpansionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8DFD5225D1085008671C0 /* ExpansionsController.swift */; };
+		C0E8DFD8225D1536008671C0 /* intrigueCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8DFD7225D1536008671C0 /* intrigueCardDeck.swift */; };
 		C0EE9879221BA5C300999D7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EE9878221BA5C300999D7E /* AppDelegate.swift */; };
 		C0EE987B221BA5C300999D7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EE987A221BA5C300999D7E /* ViewController.swift */; };
 		C0EE987E221BA5C300999D7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0EE987C221BA5C300999D7E /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 		C042393A2245658B00E37E16 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		C042393C2245788900E37E16 /* allDecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allDecks.swift; sourceTree = "<group>"; };
 		C042393E22469F7F00E37E16 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
+		C0E8DFD5225D1085008671C0 /* ExpansionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpansionsController.swift; sourceTree = "<group>"; };
+		C0E8DFD7225D1536008671C0 /* intrigueCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = intrigueCardDeck.swift; sourceTree = "<group>"; };
 		C0EE9875221BA5C300999D7E /* DominionCardRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DominionCardRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EE9878221BA5C300999D7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EE987A221BA5C300999D7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,17 +76,19 @@
 			children = (
 				C0EE9878221BA5C300999D7E /* AppDelegate.swift */,
 				C0EE987A221BA5C300999D7E /* ViewController.swift */,
-				C042393C2245788900E37E16 /* allDecks.swift */,
-				C0EE988E221DDA8D00999D7E /* randomColorProvider.swift */,
-				C0EE988A221BA71200999D7E /* CardRandomizer.swift */,
-				C01565CF221E2DEA000D9238 /* dominionCardDeck.swift */,
-				C01565CD221E2DBB000D9238 /* CardTemplate.swift */,
-				C0EE987C221BA5C300999D7E /* Main.storyboard */,
+				C0E8DFD5225D1085008671C0 /* ExpansionsController.swift */,
 				C042393A2245658B00E37E16 /* SettingsController.swift */,
 				C042393E22469F7F00E37E16 /* SettingsData.swift */,
-				C0423930223F2A1C00E37E16 /* prosperityCardDeck.swift */,
-				C0EE987F221BA5C400999D7E /* Assets.xcassets */,
+				C0EE988E221DDA8D00999D7E /* randomColorProvider.swift */,
+				C0EE988A221BA71200999D7E /* CardRandomizer.swift */,
+				C01565CD221E2DBB000D9238 /* CardTemplate.swift */,
 				C0EE9881221BA5C400999D7E /* LaunchScreen.storyboard */,
+				C0EE987C221BA5C300999D7E /* Main.storyboard */,
+				C01565CF221E2DEA000D9238 /* dominionCardDeck.swift */,
+				C0423930223F2A1C00E37E16 /* prosperityCardDeck.swift */,
+				C0E8DFD7225D1536008671C0 /* intrigueCardDeck.swift */,
+				C042393C2245788900E37E16 /* allDecks.swift */,
+				C0EE987F221BA5C400999D7E /* Assets.xcassets */,
 				C0EE9884221BA5C400999D7E /* Info.plist */,
 			);
 			path = DominionCardRandomizer;
@@ -120,6 +126,7 @@
 				TargetAttributes = {
 					C0EE9874221BA5C300999D7E = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -160,10 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C042393B2245658B00E37E16 /* SettingsController.swift in Sources */,
+				C0E8DFD8225D1536008671C0 /* intrigueCardDeck.swift in Sources */,
 				C0EE988B221BA71200999D7E /* CardRandomizer.swift in Sources */,
 				C042393F22469F7F00E37E16 /* SettingsData.swift in Sources */,
 				C0EE987B221BA5C300999D7E /* ViewController.swift in Sources */,
 				C042393D2245788900E37E16 /* allDecks.swift in Sources */,
+				C0E8DFD6225D1085008671C0 /* ExpansionsController.swift in Sources */,
 				C0EE9879221BA5C300999D7E /* AppDelegate.swift in Sources */,
 				C0EE988F221DDA8D00999D7E /* randomColorProvider.swift in Sources */,
 				C01565CE221E2DBB000D9238 /* CardTemplate.swift in Sources */,
@@ -323,7 +332,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = github.io.emeraldgatewaysolutions.dominionAssistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -341,7 +350,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = github.io.emeraldgatewaysolutions.dominionAssistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

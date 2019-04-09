@@ -7,6 +7,8 @@
 //
 
 var prosperitySwitch: Bool = false
+var intrigueSwitch: Bool = false
+
 var plusCardSwitch: Bool = false
 var plusActionSwitch: Bool = false
 var plusBuySwitch: Bool = false

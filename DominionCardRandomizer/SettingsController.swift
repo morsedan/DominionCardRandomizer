@@ -26,7 +26,7 @@ class SettingsController: UIViewController {
         let generatedColor = BackgroundColorProvider().colors[previousIndex]
         view.backgroundColor = generatedColor
         doneButton.tintColor = generatedColor
-        includeProsperity.setOn(prosperitySwitch, animated: false)
+
         requirePlus.setOn(plusCardSwitch, animated: false)
         requireAction.setOn(plusActionSwitch, animated: false)
         requireBuy.setOn(plusBuySwitch, animated: false)
@@ -36,7 +36,7 @@ class SettingsController: UIViewController {
         allowAttack.setOn(isAttackSwitch, animated: false)
         requireReaction.setOn(isDefenseSwitch, animated: false)
         
-        includeProsperity.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
+
         requirePlus.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
         requireAction.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
         requireBuy.onTintColor = UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 0.25)
@@ -49,7 +49,7 @@ class SettingsController: UIViewController {
     
     
     @IBAction func dismissSettings(_ sender: Any) {
-        prosperitySwitch = includeProsperity.isOn
+        
         plusCardSwitch = requirePlus.isOn
         plusActionSwitch = requireAction.isOn
         plusBuySwitch = requireBuy.isOn
@@ -73,7 +73,7 @@ class SettingsController: UIViewController {
     }
     
     @IBAction func settingsSwipedDown(_ sender: Any) {
-        prosperitySwitch = includeProsperity.isOn
+//        prosperitySwitch = includeProsperity.isOn
         plusCardSwitch = requirePlus.isOn
         plusActionSwitch = requireAction.isOn
         plusBuySwitch = requireBuy.isOn
